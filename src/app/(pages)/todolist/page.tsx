@@ -2,17 +2,17 @@
 
 import { useState } from "react"
 
-type Todolist = {
+type TodoItem = {
   text: string,
   completed: boolean
 }
 
 function Todolist() {
   const [todo, setTodo] = useState<string>("");
-  const [todos, setTodos] = useState<Todolist[]>([]);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
 
   const addTodo = () => {
-    const newTodo: Todolist = { text: todo, completed: false };
+    const newTodo: TodoItem = { text: todo, completed: false };
     setTodos([...todos, newTodo]);
     setTodo("");
   }
